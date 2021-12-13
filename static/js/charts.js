@@ -157,9 +157,9 @@ function buildCharts(sample) {
           {range: [6, 8], color: "lightgreen"},
           {range: [8, 10], color: "green"}
         ],
-        dtick: 5
       }
-    }];
+    }
+  ];
     
     // 5. Create the layout for the gauge chart.
     var gaugeLayout = { 
