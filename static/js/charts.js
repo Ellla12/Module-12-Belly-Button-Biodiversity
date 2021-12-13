@@ -103,11 +103,11 @@ function buildCharts(sample) {
     var bubbleData = [{
       x: ids,
       y: bubbleValues,
-      text: bubbleLabels,
+      hovertext: bubbleLabels,
       mode: "markers",
        marker: {
          size: bubbleValues,
-         color: bubbleValues,
+         color: ids,
          colorscale: "Earth" 
        }
     }];
@@ -137,15 +137,19 @@ function buildCharts(sample) {
     var frequency = result.wfreq
     
     // 4. Create the trace for the gauge chart.
-    var gaugeData = [{
-      value: frequency,
-      type: "indicator",
-      mode: "gauge+number",
-      title: {text: "<b> Belly Button Washing Frequency </b> <br></br> Scrubs Per Week"},
-      gauge: {
-        axis: {range: [null,10], dtick: "2"},
-
-        bar: {color: "black"},
+    var gaugeData = [
+      {
+       domain: { x: [0,1], y: [0,1] },
+       value: frequency,
+       title: {text: '<b>Belly Button Washing Frequency</b> <br>Scrubs per Week'},
+       type: "indicator",
+       mode: "gauge+number",
+       gauge: {
+         axis: { range:[0,10], tickcolor: "black", tickermode: "array"},
+         bar: {color: "black" },
+         bgcolor: "white",
+         borderwidth: 1,
+         bordercolor: "dimgrat",
         steps:[
           {range: [0, 2], color: "red"},
           {range: [2, 4], color: "orange"},
