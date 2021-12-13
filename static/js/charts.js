@@ -157,7 +157,7 @@ function buildCharts(sample) {
           {range: [6, 8], color: "lightgreen"},
           {range: [8, 10], color: "green"}
         ],
-        dtick: 2
+        dtick: 5
       }
     }];
     
